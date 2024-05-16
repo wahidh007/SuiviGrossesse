@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fee7f0"
+    tools:context=".fragments.HomeFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/tvSemaineGrossesse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Semaine 25"
+            android:textSize="60sp"
+            android:textColor="@color/pink_fort" />
+
+        <TextView
+            android:id="@+id/tvDateConception"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Date de Conception : 01/03/2024"
+            android:textStyle="bold"
+            android:textColor="@color/pink_fort"
+            android:textSize="18dp" />
+
+        <TextView
+            android:id="@+id/tvDateAccouchement"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Date d'accouchement: 10/08/2024"
+            android:textStyle="bold"
+            android:textColor="@color/pink"
+            android:textSize="18sp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center">
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/imageView1"
+                android:src="@drawable/s10"
+                android:scaleType="centerCrop"
+                app:riv_corner_radius="15dip"
+                app:riv_border_width="2dip"
+                app:riv_border_color="#FFFFFF"
+                app:riv_mutate_background="true"
+                android:layout_height="300dp"
+                android:layout_width="300dp"
+                android:layout_marginTop="40dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp">
+
+            <Button
+                android:id="@+id/btSuiviGrossesse"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Suivi grossesse" />
+
+            <Button
+                android:id="@+id/btInformations"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Informations" />
+
+            <Button
+                android:id="@+id/btOutils"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Outils" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

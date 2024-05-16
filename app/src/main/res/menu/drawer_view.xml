@@ -1,0 +1,27 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single" android:id="@+id/grp1">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/menu_pregnancy"
+            android:title="@string/menu_home" />
+        <item
+            android:id="@+id/nav_appoitement"
+            android:icon="@drawable/calendar_month"
+            android:title="@string/menu_appointment" />
+        <item
+            android:id="@+id/nav_tools"
+            android:icon="@drawable/ic_tools"
+            android:title="@string/menu_tools" />
+        <item
+            android:id="@+id/nav_account"
+            android:icon="@drawable/usersolid"
+            android:title="@string/menu_account" />
+    </group>
+    <group android:checkableBehavior="single" android:id="@+id/grp2">
+        <item
+            android:id="@+id/nav_logout"
+            android:icon="@drawable/logout"
+            android:title="@string/menu_logout" />
+    </group>
+</menu>
