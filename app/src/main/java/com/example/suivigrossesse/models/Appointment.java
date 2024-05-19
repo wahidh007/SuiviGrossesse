@@ -4,11 +4,16 @@ public class  Appointment {
 
     private String id;
     private boolean booked;
-    private long date;
+    private boolean visitDone;
+    private String date;
 
-    public Appointment(String id, boolean booked, long date) {
+    public Appointment() {
+    }
+
+    public Appointment(String id, boolean booked, boolean done, String date) {
         this.id = id;
         this.booked = booked;
+        this.visitDone = done;
         this.date = date;
     }
 
@@ -20,7 +25,7 @@ public class  Appointment {
         return booked;
     }
 
-    public long getDate() {
+    public String getDate() {
         return date;
     }
 
@@ -32,8 +37,16 @@ public class  Appointment {
         this.booked = booked;
     }
 
-    public void setDate(long date) {
+    public void setDate(String date) {
         this.date = date;
+    }
+
+    public boolean isVisitDone() {
+        return visitDone;
+    }
+
+    public void setVisitDone(boolean visitDone) {
+        this.visitDone = visitDone;
     }
 
     @Override
@@ -41,6 +54,7 @@ public class  Appointment {
         return "Appointment{" +
                 "id='" + id + '\'' +
                 ", booked=" + booked +
+                ", done=" + visitDone +
                 ", date=" + date +
                 '}';
     }

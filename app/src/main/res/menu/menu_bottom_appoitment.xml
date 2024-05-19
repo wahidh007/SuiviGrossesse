@@ -6,12 +6,12 @@
         android:id="@+id/miAppoitment"
         android:icon="@drawable/ic_schedule"
         app:showAsAction="ifRoom"
-        android:title="Compose">
+        android:title="@string/menu_rendez_vous">
     </item>
     <item
         android:id="@+id/miLastAppoitment"
-        android:icon="@drawable/ic_profile"
+        android:icon="@drawable/ic_pregnancy"
         app:showAsAction="ifRoom"
-        android:title="Compose">
+        android:title="@string/menu_history">
     </item>
 </menu>

@@ -22,10 +22,8 @@ import androidx.fragment.app.FragmentManager;
 
 import com.example.suivigrossesse.fragments.AppoitmentFragment;
 import com.example.suivigrossesse.fragments.HomeFragment;
-import com.example.suivigrossesse.fragments.SecondFragment;
 import com.example.suivigrossesse.fragments.ProfileFragment;
 import com.example.suivigrossesse.fragments.ToolsFragment;
-import com.example.suivigrossesse.models.User;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.navigation.NavigationView;
@@ -201,7 +199,6 @@ public class MainActivity extends AppCompatActivity {
         if (id == R.id.nav_home) {
             fragmentClass = HomeFragment.class;
         } else if (id == R.id.nav_appoitement) {
-//            fragmentClass = SecondFragment.class;
             fragmentClass = AppoitmentFragment.class;
         } else if (id == R.id.nav_tools) {
             fragmentClass = ToolsFragment.class;
