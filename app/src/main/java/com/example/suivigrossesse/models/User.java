@@ -14,8 +14,8 @@ import java.util.Locale;
 
 public class User implements Serializable {
 
-    public String name,email,address,phone;
-    public LocalDate dateConception;
+    private String name,email,address,phone;
+    private LocalDate dateConception;
 
     public User() {
     }
@@ -90,7 +90,7 @@ public class User implements Serializable {
     public int semaineGrossesse() {
         // Date de conception
 //        LocalDate dateDeConception = LocalDate.of(2024, 5, 12);
-        dateConception = LocalDate.of(2024, 2, 27);
+//        dateConception = LocalDate.of(2024, 2, 27);
 
         // Calcul de la semaine en cours
         LocalDate dateActuelle = LocalDate.now();

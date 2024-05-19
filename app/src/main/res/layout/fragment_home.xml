@@ -48,7 +48,7 @@
             <com.makeramen.roundedimageview.RoundedImageView
                 xmlns:app="http://schemas.android.com/apk/res-auto"
                 android:id="@+id/imageView1"
-                android:src="@drawable/s10"
+                android:src="@drawable/baby"
                 android:scaleType="centerCrop"
                 app:riv_corner_radius="15dip"
                 app:riv_border_width="2dip"

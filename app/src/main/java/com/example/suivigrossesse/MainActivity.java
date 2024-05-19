@@ -25,6 +25,7 @@ import com.example.suivigrossesse.fragments.HomeFragment;
 import com.example.suivigrossesse.fragments.SecondFragment;
 import com.example.suivigrossesse.fragments.ProfileFragment;
 import com.example.suivigrossesse.fragments.ToolsFragment;
+import com.example.suivigrossesse.models.User;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.navigation.NavigationView;
@@ -228,38 +229,6 @@ public class MainActivity extends AppCompatActivity {
         mDrawer.closeDrawers();
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // The action bar home/up action should open or close the drawer.
-//        if (drawerToggle.onOptionsItemSelected(item)) {
-//            return true;
-//        }
-//
-//        return super.onOptionsItemSelected(item);
-
-        if (drawerToggle.onOptionsItemSelected(item)) {
-            return true;
-        }
-
-        // Handle presses on the action bar items
-        int id = item.getItemId();
-        if (id == R.id.miCompose) {
-            Toast.makeText(getApplicationContext(), "Icon Compose",
-                    Toast.LENGTH_SHORT).show();
-            return true;
-        } else if (id == R.id.miSetting) {
-            Toast.makeText(getApplicationContext(), "Icon Profile",
-                    Toast.LENGTH_SHORT).show();
-            return true;
-        } else if (id == R.id.miDateConception) {
-            showDatePicker();
-            return true;
-        } else {
-            return super.onOptionsItemSelected(item);
-        }
-
-    }
-
     // `onPostCreate` called when activity start-up is complete after `onStart()`
     // NOTE 1: Make sure to override the method with only a single `Bundle` argument
     // Note 2: Make sure you implement the correct `onPostCreate(Bundle savedInstanceState)` method.
@@ -301,4 +270,36 @@ public class MainActivity extends AppCompatActivity {
         datePickerDialog.setTitle("Date de Conception");
         datePickerDialog.show();
     }
+
+//    @Override
+//    public boolean onOptionsItemSelected(MenuItem item) {
+//        // The action bar home/up action should open or close the drawer.
+////        if (drawerToggle.onOptionsItemSelected(item)) {
+////            return true;
+////        }
+////
+////        return super.onOptionsItemSelected(item);
+//
+//        if (drawerToggle.onOptionsItemSelected(item)) {
+//            return true;
+//        }
+//
+//        // Handle presses on the action bar items
+//        int id = item.getItemId();
+//        if (id == R.id.miCompose) {
+//            Toast.makeText(getApplicationContext(), "Icon Compose",
+//                    Toast.LENGTH_SHORT).show();
+//            return true;
+//        } else if (id == R.id.miSetting) {
+//            Toast.makeText(getApplicationContext(), "Icon Profile",
+//                    Toast.LENGTH_SHORT).show();
+//            return true;
+//        } else if (id == R.id.miDateConception) {
+//            showDatePicker();
+//            return true;
+//        } else {
+//            return super.onOptionsItemSelected(item);
+//        }
+//
+//    }
 }

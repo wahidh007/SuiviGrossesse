@@ -13,6 +13,7 @@
     <color name="red">#F3062A</color>
     <color name="pink_fort">#652b3f</color>
     <color name="pink">#fd3f92</color>
+    <color name="pink_faible">#FFE4F0</color>
 
     <color name="colorPrimary">#FFFFFF</color>
 </resources>

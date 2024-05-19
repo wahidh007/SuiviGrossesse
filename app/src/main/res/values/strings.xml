@@ -14,4 +14,11 @@
     <string name="menu_tools">Outils</string>
     <string name="menu_account">Mon Compte</string>
     <string name="menu_logout">Quitter</string>
+
+    <string name="detail_grossesse">Détail \n\n Grossesse</string>
+<!--    <string name="detail_grossesse">-->
+<!--    À 11 semaines, l’embryon a déjà une apparence humaine : on peut distinguer ses yeux, son nez et sa bouche.\n\n-->
+<!--        Ses paupières sont fermées. Ses doigts sont maintenant séparés et ses orteils commencent à se former.\n\n-->
+<!--        Il commence à bouger ses membres, mais vous ne pouvez pas encore le sentir.-->
+<!--    </string>-->
 </resources>
