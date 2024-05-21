@@ -68,8 +68,9 @@ public class MainActivity extends AppCompatActivity {
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         //-- Update drawer user name and user email
         setDrawerUserNameEmail(db);
+
         //-- test update User Phone
-        updateUser("987456322", db);
+//        updateUser("987456322", db);
 
 //        MenuItem itemLogout = header.findViewById(R.id.nav_logout);
 //        itemLogout.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
@@ -191,7 +192,7 @@ public class MainActivity extends AppCompatActivity {
         int id = menuItem.getItemId();
 
         if (id == R.id.nav_logout){
-            Toast.makeText(getApplicationContext(), "Test logout",
+            Toast.makeText(getApplicationContext(), "Déconnexion avec succes !",
                     Toast.LENGTH_SHORT).show();
             finish();
         }

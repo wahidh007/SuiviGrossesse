@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -242,6 +243,33 @@ public class AppoitmentFragment extends Fragment {
                         }
                     }
                 });
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+//---
+//        if (drawerToggle.onOptionsItemSelected(item)) {
+//            return true;
+//        }
+
+        // Handle presses on the action bar items
+        int id = item.getItemId();
+        if (id == R.id.miCompose) {
+            Toast.makeText(this.getContext(), "Icon Compose",
+                    Toast.LENGTH_SHORT).show();
+            return true;
+        } else if (id == R.id.miSetting) {
+            Toast.makeText(this.getContext(), "Appoitment added!",
+                    Toast.LENGTH_SHORT).show();
+            dbAddAppoitment();
+            return true;
+        } else if (id == R.id.miDateConception) {
+            return true;
+        } else {
+            return super.onOptionsItemSelected(item);
+        }
+
     }
 
 }

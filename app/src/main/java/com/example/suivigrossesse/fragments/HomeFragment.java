@@ -117,18 +117,22 @@ public class HomeFragment extends Fragment {
                         String email = task.getResult().getString("email");
                         String address = task.getResult().getString("address");
                         String phone = task.getResult().getString("phone");
-                        LocalDate dateConception = LocalDate.parse(task.getResult().getString("dateConception"),
-                                DateTimeFormatter.ofPattern("dd/MM/yyyy"));
-                        currentUser = new User(name, email, address, phone, dateConception);
+                        LocalDate dateConception;
+
 //                        DocumentSnapshot docSnapshot = task.getResult();
 //                        currentUser = docSnapshot.toObject(User.class);
                         Log.d(TAG, "From HomeFragment - " + currentUser);
 
-                        if (currentUser.getDateConception() == null) {
+//                        if (currentUser.getDateConception() == null) {
+                        if (task.getResult().getString("dateConception") == null) {
+                            currentUser = new User(name, email, address, phone);
                             Toast.makeText(this.getContext(), currentUser.getEmail() +
                                             " - No Date Conception", Toast.LENGTH_SHORT).show();
                             showDatePicker();
                         } else {
+                            dateConception = LocalDate.parse(task.getResult().getString("dateConception"),
+                                    DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+                            currentUser = new User(name, email, address, phone, dateConception);
                             upDateView();
                         }
 

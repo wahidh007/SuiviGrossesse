@@ -15,6 +15,9 @@
     <string name="menu_account">Mon Compte</string>
     <string name="menu_logout">Quitter</string>
 
+    <string name="menu_rendez_vous">Rendez-vous</string>
+    <string name="menu_history">Historique</string>
+
     <string name="detail_grossesse">Détail \n\n Grossesse</string>
 <!--    <string name="detail_grossesse">-->
 <!--    À 11 semaines, l’embryon a déjà une apparence humaine : on peut distinguer ses yeux, son nez et sa bouche.\n\n-->
