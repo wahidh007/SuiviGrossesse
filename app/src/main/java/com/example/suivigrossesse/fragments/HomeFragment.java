@@ -58,6 +58,7 @@ public class HomeFragment extends Fragment {
     TextView tvDateConception;
     ImageView ivBaby;
     Button btSuiviGrossesse;
+    Button btInformations;
     User currentUser;
     public HomeFragment() {
         // Required empty public constructor
@@ -107,6 +108,7 @@ public class HomeFragment extends Fragment {
         tvDateConception = binding.findViewById(R.id.tvDateConception);
         ivBaby = binding.findViewById(R.id.imageView1);
         btSuiviGrossesse = binding.findViewById(R.id.btSuiviGrossesse);
+        btInformations = binding.findViewById(R.id.btInformations);
 
         // --- Recuperation User
         FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -145,18 +147,74 @@ public class HomeFragment extends Fragment {
         btSuiviGrossesse.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                showCustomDialog();
+                showCustomDialogSuivi();
             }
         });
 
+        btInformations.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showCustomDialogInfo();
+            }
+        });
         // --- My Code End ---
 
         return binding;
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    void showCustomDialogInfo() {
+        final Dialog dialog = new Dialog(getContext());
+        //We have added a title in the custom layout. So let's disable the default title.
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        //The user will be able to cancel the dialog bu clicking anywhere outside the dialog.
+        dialog.setCancelable(true);
+        //Mention the name of the layout of your custom dialog.
+        dialog.setContentView(R.layout.suivi_grossesse_dialog);
+
+        //Initializing the views of the dialog.
+        TextView tv_detail_grossesse = dialog.findViewById(R.id.tv_detail_grossesse);
+        RoundedImageView iv_grossesse_detail = dialog.findViewById(R.id.iv_grossesse_detail);
+
+        // Set the current baby image
+        int ImgRes = getBabyImageRes(currentUser.semaineGrossesse());
+        iv_grossesse_detail.setImageResource(ImgRes);
+
+
+        // --- Recuperation Détail Semaine Grossesse
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        db.collection("grossesse").document("S" + currentUser.semaineGrossesse())
+                .get().addOnCompleteListener(task -> {
+                    if(task.isSuccessful() && task.getResult() != null){
+                        String semaineDetail = task.getResult().getString("conseils");
+
+                        if (semaineDetail == null) {
+                            semaineDetail = "Semaine détails..\n non encore saisis !";
+                        }
+                        Log.d(TAG, "From showCustomDialog() - " + semaineDetail);
+
+                        tv_detail_grossesse.setText(semaineDetail.replace("\\n", "\n"));
+
+                    }else{
+                        //deal with error
+                    }
+                });
+        // --- End Détail Semaine Grossesse
+
+
+        Button btOk = dialog.findViewById(R.id.btOk);
+        btOk.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
+
+        dialog.show();
+    }
     //Function to display the custom dialog.
     @RequiresApi(api = Build.VERSION_CODES.O)
-    void showCustomDialog() {
+    void showCustomDialogSuivi() {
         final Dialog dialog = new Dialog(getContext());
         //We have added a title in the custom layout. So let's disable the default title.
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -261,81 +319,81 @@ public class HomeFragment extends Fragment {
 
         switch (week) {
             case 1:
-                res = R.drawable.baby; break;
+                res = R.drawable.s5; break;
             case 2:
-                res = R.drawable.baby; break;
+                res = R.drawable.s5; break;
             case 3:
-                res = R.drawable.baby; break;
+                res = R.drawable.s5; break;
             case 4:
-                res = R.drawable.baby; break;
+                res = R.drawable.s5; break;
             case 5:
                 res = R.drawable.s5; break;
             case 6:
-                res = R.drawable.baby; break;
+                res = R.drawable.s6; break;
             case 7:
-                res = R.drawable.baby; break;
+                res = R.drawable.s7; break;
             case 8:
                 res = R.drawable.s8; break;
             case 9:
-                res = R.drawable.baby; break;
+                res = R.drawable.s9; break;
             case 10:
                 res = R.drawable.s10; break;
             case 11:
-                res = R.drawable.baby; break;
+                res = R.drawable.s11; break;
             case 12:
-                res = R.drawable.baby; break;
+                res = R.drawable.s12; break;
             case 13:
-                res = R.drawable.baby; break;
+                res = R.drawable.s13; break;
             case 14:
                 res = R.drawable.s14; break;
             case 15:
-                res = R.drawable.baby; break;
+                res = R.drawable.s15; break;
             case 16:
-                res = R.drawable.baby; break;
+                res = R.drawable.s16; break;
             case 17:
-                res = R.drawable.baby; break;
+                res = R.drawable.s17; break;
             case 18:
-                res = R.drawable.baby; break;
+                res = R.drawable.s18; break;
             case 19:
-                res = R.drawable.baby; break;
+                res = R.drawable.s19; break;
             case 20:
                 res = R.drawable.s20; break;
             case 21:
-                res = R.drawable.baby; break;
+                res = R.drawable.s21; break;
             case 22:
-                res = R.drawable.baby; break;
+                res = R.drawable.s22; break;
             case 23:
-                res = R.drawable.baby; break;
+                res = R.drawable.s23; break;
             case 24:
                 res = R.drawable.s24; break;
             case 25:
-                res = R.drawable.baby; break;
+                res = R.drawable.s25; break;
             case 26:
-                res = R.drawable.baby; break;
+                res = R.drawable.s26; break;
             case 27:
-                res = R.drawable.baby; break;
+                res = R.drawable.s27; break;
             case 28:
                 res = R.drawable.s28; break;
             case 29:
-                res = R.drawable.baby; break;
+                res = R.drawable.s29; break;
             case 30:
-                res = R.drawable.baby; break;
+                res = R.drawable.s30; break;
             case 31:
-                res = R.drawable.baby; break;
+                res = R.drawable.s31; break;
             case 32:
-                res = R.drawable.baby; break;
+                res = R.drawable.s32; break;
             case 33:
-                res = R.drawable.baby; break;
+                res = R.drawable.s33; break;
             case 34:
-                res = R.drawable.baby; break;
+                res = R.drawable.s34; break;
             case 35:
-                res = R.drawable.baby; break;
+                res = R.drawable.s35; break;
             case 36:
                 res = R.drawable.s36; break;
             case 37:
-                res = R.drawable.baby; break;
+                res = R.drawable.s37; break;
             case 38:
-                res = R.drawable.baby; break;
+                res = R.drawable.s38; break;
             case 39:
                 res = R.drawable.s39; break;
             default:
